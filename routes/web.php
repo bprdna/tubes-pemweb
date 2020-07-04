@@ -23,3 +23,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //debugging
 Route::view('/seminar', 'post.post');
+
+Route::get('/admin', 'SeminarController@index');
+Route::get('/admin/create', 'SeminarController@create');
+Route::post('/admin/store', 'SeminarController@store');
+Route::get('/admin/edit/{id}', 'SeminarController@edit');
+Route::put('/admin/update/{id}', 'SeminarController@update');
+Route::get('/admin/destroy/{id}', 'SeminarController@destroy');
