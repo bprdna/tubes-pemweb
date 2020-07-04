@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Seminar;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,15 @@ class SeminarController extends Controller
      */
     public function index()
     {
-        $seminar = Seminar::all();
-        return view('admin.index', ['seminar' => $seminar]);
+        
+        if(Auth::check())
+        {
+            $seminar = Seminar::all();
+            $id = Auth::user()->id;
+            return view('admin.index', ['seminar' => $seminar, 'id' => $id]);
+        }
+
+        return redirect('/login');
     }
 
     /**
@@ -25,7 +33,12 @@ class SeminarController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        if(Auth::check())
+        {
+            return view('admin.create');
+        }
+
+        return redirect('/login');
     }
 
     /**
@@ -72,9 +85,13 @@ class SeminarController extends Controller
      */
     public function edit($id)
     {
-        $seminar = Seminar::find($id);
+        if(Auth::check())
+        {
+            $seminar = Seminar::find($id);
+            return view('admin.edit', ['seminar' => $seminar]);
+        }
 
-        return view('admin.edit', ['seminar' => $seminar]);
+        return redirect('/login');
     }
 
     /**
