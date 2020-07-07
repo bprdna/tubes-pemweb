@@ -15,8 +15,8 @@ class CreateSeminarUserTable extends Migration
     {
         Schema::create('seminar_user', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('seminar_id');
-            $table->bigInteger('user_id');
+            $table->unsignedBigInteger('seminar_id'); //jangan lupa tambah foreign key
+            $table->unsignedBigInteger('user_id');
         });
     }
 
