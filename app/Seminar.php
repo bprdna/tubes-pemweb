@@ -12,4 +12,7 @@ class Seminar extends Model
         'location',
         'date'
     ];
+    public function user(){
+        return $this->belongsToMany('App\User');
+    }
 }
