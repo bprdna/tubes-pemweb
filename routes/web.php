@@ -28,3 +28,4 @@ Route::get('/admin/edit/{id}', 'SeminarController@edit');
 Route::put('/admin/update/{id}', 'SeminarController@update');
 Route::get('/admin/destroy/{id}', 'SeminarController@destroy');
 Route::get('/anggota', 'SuController@index');
+Route::get('/home/daftar/{id}', 'HomeController@daftar');

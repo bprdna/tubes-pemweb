@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Seminar;
 use App\User;
+use App\Seminar_User;
 
 class HomeController extends Controller
 {
@@ -25,7 +27,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $seminar = Seminar::get();
+        return view('home', ['seminar' => $seminar]);
     }
 
+    public function daftar($id)
+    {
+        $userId = Auth::user()->id;
+
+        Seminar_User::create([
+            'seminar_id' => $id,
+            'user_id' => $userId
+        ]);
+
+        return redirect('/home');
+    }
 }
