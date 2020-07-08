@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
 
 Auth::routes();
 
@@ -23,7 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //debugging
 Route::view('/seminar', 'post.post');
-
 Route::get('/admin', 'SeminarController@index');
 Route::get('/admin/create', 'SeminarController@create');
 Route::post('/admin/store', 'SeminarController@store');
