@@ -3,9 +3,9 @@ Nama Project : Aplikasi kegiatan Seminar / Webinar
 Link Repository : https://github.com/bprdna/tubes-pemweb.git
 
 Anggota Kelompok :
-Aziz Dafa Putra		(M0518008)
-Bintang Pradana Erlangga P.	(M0518010)
-Candra Tangguh Pradipta	(M0518012)
+1. Aziz Dafa Putra		        (M0518008)
+2. Bintang Pradana Erlangga P.	(M0518010)
+3. Candra Tangguh Pradipta	    (M0518012)
 
 README:
 
