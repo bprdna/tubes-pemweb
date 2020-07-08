@@ -13,7 +13,7 @@
                 <p class="card-text">{{ Str::limit($s->description, 100) }}</p>
                 <h5 class="card-text" style="font-size: 16px; margin-bottom: 5px">{{ $s->location }}</h5>
                 <h6 class="card-text" style="margin-bottom: 15px">{{ $s->date }}</h6>
-                <a class="btn btn-primary" href="/home/daftar/{{ $s->id }}">Daftar</a>
+                <div class="alert alert-primary" role="alert">Silahkan login untuk mendaftar</div>
             </div>
         </div>
         @endforeach
